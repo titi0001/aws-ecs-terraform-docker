@@ -4,7 +4,7 @@
 nomes_dos_repositorios=$(docker images --format "{{.Repository}}:{{.Tag}}")
 
 # Define a parte numérica inicial com até 12 números
-numeros_iniciais="[0-9]{1,12}"
+numeros_iniciais="[a-z0-9-]{1,50}"
 tag="[a-z0-9-]{1,50}"
 
 # Define o formato do nome da imagem que deseja verificar
