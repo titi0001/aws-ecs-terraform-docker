@@ -5,3 +5,11 @@ variable "nome_repo" {
 variable "cargoIAM" {
   type = string
 }
+
+variable "ecsEnv" {
+  type = string
+}
+
+variable "ambiente" {
+  type = string
+}
