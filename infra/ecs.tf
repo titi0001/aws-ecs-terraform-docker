@@ -22,7 +22,7 @@ resource "aws_ecs_task_definition" "Django-API" {
   container_definitions = jsonencode(
     [
       {
-        "name"      = var.ambiente
+        "name"      = "producao"
         "image"     = "029798084503.dkr.ecr.us-west-2.amazonaws.com/producao:v1"
         "cpu"       = 256
         "memory"    = 512
@@ -45,14 +45,14 @@ resource "aws_ecs_service" "Django-API" {
   desired_count   = 3
 
   load_balancer {
-    target_group_arn = aws_lb_target_group.target.arn
-    container_name   = var.ambiente
+    target_group_arn = aws_lb_target_group.alvo.arn
+    container_name   = "producao"
     container_port   = 8000
   }
 
   network_configuration {
     subnets         = module.vpc.private_subnets
-    security_groups = [aws_security_group.alb_private.id]
+    security_groups = [aws_security_group.privado.id]
   }
 
   capacity_provider_strategy {
