@@ -39,6 +39,15 @@ Certifique-se de ter o Terraform instalado localmente e configurado com suas cre
     ```bash
     terraform apply
     ```
+# Criar um Bucket no Amazon S3
+
+Para criar um bucket no Amazon S3 usando a Phython, execute o seguinte comando no terminal,
+
+```bash
+pip install boto3
+python3 create-s3.py
+```
+substituindo "SEU_NOME_DE_BUCKET" pelo nome desejado e "SUA_REGIAO" pela região desejada:
 
 ## Contribuição
 
