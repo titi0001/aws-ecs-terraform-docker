@@ -13,7 +13,7 @@ module "ecs" {
 }
 
 resource "aws_ecs_task_definition" "Django-API" {
-  family                   = "Django-API"
+  family                   = "Django-API"                                                            
   requires_compatibilities = ["FARGATE"]
   network_mode             = "awsvpc"
   cpu                      = 256
